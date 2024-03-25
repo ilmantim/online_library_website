@@ -60,7 +60,7 @@ def on_reload():
         rendered_page = template.render(library=chunked(page, columns),
                                         quantity_pages=quantity_pages,
                                         page_number=page_number)
-        page_path = os.path.join(page_folder, f"index{page_number}.html")
+        page_path = os.path.join(page_folder, f'index{page_number}.html')
         with open(page_path, 'w', encoding='utf8') as file:
             file.write(rendered_page)
 
