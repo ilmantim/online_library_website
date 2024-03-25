@@ -10,12 +10,17 @@ from livereload import Server
 from more_itertools import chunked
 
 
+DEFAULT_FILE_FOLDER = 'media/'
+DEFAULT_PAGE_FOLDER = 'pages/'
+LIBRARY_JSON_PATH = os.path.join(DEFAULT_FILE_FOLDER, 'library.json')
+
+
 def parse_arguments():
     parser = argparse.ArgumentParser(
         description='Script for developing an online library'
     )
-    default_file_folder = 'media/'
-    default_page_folder = 'pages/'
+    default_file_folder = DEFAULT_FILE_FOLDER
+    default_page_folder = DEFAULT_PAGE_FOLDER
     parser.add_argument(
         '-f',
         '--file_folder',
@@ -43,7 +48,7 @@ def on_reload():
         autoescape=select_autoescape(['html', 'xml'])
     )
     template = env.get_template('template.html')
-    library_path = os.path.join(file_folder, 'library.json')
+    library_path = LIBRARY_JSON_PATH
 
     with open(library_path, 'r', encoding='utf8') as my_file:
         library = json.load(my_file)
