@@ -14,24 +14,24 @@ def parse_arguments():
     parser = argparse.ArgumentParser(
         description='Script for developing an online library'
     )
+    default_file_folder = 'media/'
+    default_page_folder = 'pages/'
     parser.add_argument(
         '-f',
         '--file_folder',
         help='media directory path',
         type=str,
-        default=os.environ['LIBRARY_PATH']
+        default=default_file_folder
     )
     parser.add_argument(
         '-p',
         '--page_folder',
         help='path to the folder with the pages',
         type=str,
-        default='pages/'
+        default=default_page_folder
     )
     args = parser.parse_args()
-    file_folder = args.file_folder
-    page_folder = args.page_folder
-    return file_folder, page_folder
+    return args.file_folder, args.page_folder
 
 
 def on_reload():
