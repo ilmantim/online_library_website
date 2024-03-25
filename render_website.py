@@ -45,10 +45,10 @@ def on_reload():
     template = env.get_template('template.html')
     library_path = os.path.join(file_folder, 'library.json')
 
-    with open(library_path, "r", encoding="utf8") as my_file:
+    with open(library_path, 'r', encoding='utf8') as my_file:
         library = json.load(my_file)
     for book in library:
-        image_link = urlsplit(book["image_link"])
+        image_link = urlsplit(book['image_link'])
         book['image_link'] = image_link.path.split('/')[2]
         book['book_path'] = os.path.join(f"{book['book_name']}.txt")
 
@@ -60,8 +60,8 @@ def on_reload():
         rendered_page = template.render(library=chunked(page, columns),
                                         quantity_pages=quantity_pages,
                                         page_number=page_number)
-        page_path = os.path.join(page_folder, f'index{page_number}.html')
-        with open(page_path, 'w', encoding="utf8") as file:
+        page_path = os.path.join(page_folder, f"index{page_number}.html")
+        with open(page_path, 'w', encoding='utf8') as file:
             file.write(rendered_page)
 
 
