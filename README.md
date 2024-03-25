@@ -23,8 +23,6 @@ The online library is formed on the basis of json file, which we formed earlier 
 ````
 py render_website.py
 
-py render_website.py --page_folder pages
-
 ````
 
 After the launch go to http://127.0.0.1:5500/pages/index1.html
