@@ -41,27 +41,27 @@
     {% for books in library %}
       <div class="container mt-5">
         <div class="row">
-      {% for book in books %}
-        <div class="col">
-          <div class="card mb-3" style="max-width: 540px;" >
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src=../media/images/{{book.image_link|urlencode}} class="card-img" alt='{{ alt }}'>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">{{book.book_name}}</h5>
-                    <p class="card-text">{{book.book_author}}</p>
-                    {% for genre in book.book_genres %}
-                      <h6><span class="badge badge-secondary">{{genre}}</span></h6>
-                    {% endfor %}
-                      <a href=../media/books/{{book.book_path|urlencode}} target="_blank" rel="noopener noreferrer" >Читать</a>
+          {% for book in books %}
+            <div class="col">
+              <div class="card mb-3" style="max-width: 540px;" >
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img src=../media/images/{{book.image_link|urlencode}} class="card-img" alt='{{ alt }}'>
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{book.book_name}}</h5>
+                        <p class="card-text">{{book.book_author}}</p>
+                        {% for genre in book.book_genres %}
+                          <h6><span class="badge badge-secondary">{{genre}}</span></h6>
+                        {% endfor %}
+                          <a href=../media/books/{{book.book_path|urlencode}} target="_blank" rel="noopener noreferrer" >Читать</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      {% endfor %}
+          {% endfor %}
           <div class="w-100"></div>
         </div>
       </div>
