@@ -30,5 +30,15 @@ py render_website.py --page_folder pages
 After the launch go to http://127.0.0.1:5500/pages/index1.html
 
 
+## If you want to use the offline library (without internet) using your browser
+
+````
+open pages folder
+
+double click on the file 'index1.html'
+
+````
+
+
 ### Goal of the project
 Code written for educational purposes on the online course for web developers [dvmn.org](https://dvmn.org/).
